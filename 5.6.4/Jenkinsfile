@@ -9,7 +9,8 @@ pipeline {
       }
       stage('Build') {
          steps {
-             echo 'hello world'
+             sh 'cd server/ && docker build . -t terracota-oss-server-5.6.4'
+             sh 'docker ps -a' 
          }
 
          post {
